@@ -1,0 +1,42 @@
+@CHARSET "UTF-8";
+
+img{border:0;}
+.logo_box{
+    width:1000px;
+    height:70px;
+    margin:30px auto;
+}
+
+.banner_bg{width:100%;height:500px;background:url(../img/login_bg.png)}
+.banner_bg .banner{width:1000px;height:500px;background:url(../img/banner.png) no-repeat left;margin:0 auto;position:relative;}
+/* .banner_bg .banner .login_form{width:330px;height:300px;background:url(../img/form_bg.png) no-repeat;position:absolute;top:60px;left:644px;} */
+.banner_bg .banner .login_form{width:330px;height:320px;border-radius:5px;background-color: #fff;position:absolute;top:65px;left:644px; border: 1px solid #b7b7b7;} /*huangtt 2016-11-03 @修改login背景 */
+
+.banner_bg .banner .login_form .form_title{margin:30px 0 10px 30px;}
+.banner_bg .login_form .title_word{font-size:16px;font-weight:bold;color:#019dda;}
+.banner_bg .login_form .submit_box{margin:0px 0 10px 30px;}
+.banner_bg .login_form .submit_box input{margin-top:30px;}
+.banner_bg .login_form .submit_box .txt1,.txt2{width:250px;height:38px;border:1px solid #e0dfdf;padding-left:30px;}
+.banner_bg .login_form .submit_box .txt1{background:#fff url(../img/man.png) no-repeat 10px 13px;}
+.banner_bg .login_form .submit_box .txt2{background:#fff url(../img/lock.png) no-repeat 10px 13px;margin-top: 8px;}
+.banner_bg .login_form .submit_box .errorShow{height:17px;}
+.banner_bg .login_form .submit_box .submit_btn{width:250px;height:40px;margin-top:8px; background-color:#009CD9; border:0;cursor:pointer;color:#fff;} /*background:url(../img/btn_bg.png) no-repeat;*/
+.login_footer{width:1000px;height:30px;font-size:14px;color:#9d9d9d;line-height:30px;text-align:center;margin:30px auto;}
+.loginImg {
+	vertical-align:middle;
+	margin-right:5px;
+	alt:"请登录";
+}
+
+.loginTitle {
+    margin-left:1em;
+}
+
+.error {
+    padding-left: 16px;
+    margin-left: 2px;
+    color:#b41019;
+    font-family:Verdana, Geneva, sans-serif;
+    font-size:12px;
+    font-weight:normal;
+}

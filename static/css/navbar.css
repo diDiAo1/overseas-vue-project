@@ -1,0 +1,66 @@
+@CHARSET "UTF-8";
+
+.navbar {
+  background: #084476 url(../../static/img/header_bg02.jpg);
+  background-repeat: no-repeat;
+  min-height: 70px;
+}
+
+.navbar .navbar-brand {
+  float: left;
+  font-size: 18px;
+  line-height: 20px;
+  width: 65px;
+}
+
+ul.navbar-nav > li {
+  position: relative;
+  display: block;
+  padding: 2px;
+}
+
+.navbar .dropdown-toggle {
+  color: #FFFFFF;
+}
+
+  .navbar-nav > li > a {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 20px;
+    font-size: 14px;
+  }
+  .nav > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 15px 10px 20px;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  a {
+    text-decoration: none;
+    background: transparent;
+  }
+
+li.topMenu-left {
+  left: 57px;
+}
+
+.navbar-nav > li {
+  float: left;
+}
+
+.pull-left {
+  float:left;
+}
+
+.pull-right {
+  float:right;
+}
+
+.navbar .nav > li > a:hover,
+.navbar .nav > li > a.active,
+.navbar .nav > li > a:focus {
+  background-color: #80a0c1 !important;
+}
