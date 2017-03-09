@@ -29,3 +29,10 @@ npm test
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 # overseas-vue-project
+
+#安装echarts
+1.cnpm install echarts --save
+2.在main.js中
+import echarts from 'echarts'
+Vue.use(echarts)
+3.在homepage.vue中使用

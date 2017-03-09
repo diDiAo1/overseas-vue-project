@@ -6,8 +6,6 @@
 </template>
 
 <script>
-import echarts from '../../static/js/echarts.js'
-
 export default {
   name: 'homepage',
   data() {
@@ -37,6 +35,8 @@ export default {
   methods: {
       // 绘图
       drawGraph(id) {
+          var echarts = require('echarts');
+
           // 绘图方法
           this.chart = echarts.init(document.getElementById(id))
               // 皮肤添加同一般使用方式
@@ -44,7 +44,7 @@ export default {
               // 返回到data中
           var that = this
               // ajax 请求数据
-          $.ajax({
+         /* $.ajax({
                   // 方式
                   type: "GET",
                   // 是否异步
@@ -63,7 +63,7 @@ export default {
                       // alert("请求数据失败!");
                       console.log(errorMsg)
                   }
-              })
+              })*/
               // set
           this.chart.setOption({
               title: {
