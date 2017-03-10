@@ -32,7 +32,13 @@ export default {
           }]
       }
   },
+ created(){
+      this.setCurrentPath();
+  },
   methods: {
+      setCurrentPath: function () {
+         this.$store.state.currentPath = 'bigdata.homePage'
+      },
       // 绘图
       drawGraph(id) {
           var echarts = require('echarts');

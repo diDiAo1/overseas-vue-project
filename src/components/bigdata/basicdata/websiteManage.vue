@@ -8,5 +8,14 @@
 
 export default {
   name: 'websiteManage',
+
+  created(){
+      this.setCurrentPath();
+  },
+  methods: {
+    setCurrentPath: function () {
+       this.$store.state.currentPath = 'bigdata.websiteManage'
+    }
+  }
 }
 </script>

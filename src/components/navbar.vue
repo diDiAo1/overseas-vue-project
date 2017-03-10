@@ -11,12 +11,14 @@
      				<ul class="nav navbar-nav pull-left hidden-xs">
      					<li class="dropdown title-sub" id="navbar-left" style="margin-right: -45px">
      						<a class="team-status-toggle dropdown-toggle tip-bottom">
-     							<span class="name" style="font-size: 16px">大数据平台</span>
+     							<span class="name" style="font-size: 16px">大数据平台
+       </span>
      						</a>
      					</li>
 
      					<li class="topMenu-left" v-for="item in topMenus.menuList">
                               <a class="dropdown-toggle navbar-nav-a setW" @click="toPath(item.NodeId,item.Id)"
+                              :class="{ 'active': item.NodeId === data.currentPath }"
                               ><span class="name">{{item.Name}}</span></a>
                             </li>
      				 </ul>
@@ -44,11 +46,24 @@ export default {
       return {
         topId: this.$route.params.topId,
         userCode: 'admin',
-        topMenus: ''
+        topMenus: '',
+        data: this.$store.state
       }
     },
     created(){
       this.getTopMenu()
+    },
+    watch: {
+      'data':{
+        handler:(val,oldVal)=>{
+          //要执行的任务
+          //这里不知道怎么才能修改到this.data的数据，有知道的麻烦告知
+          //现在知道的就是通过直接修改Store.state的方式来更新数据，当然效果和修改this.data是一样的
+          //alert('成功')
+        },
+        // 深度观察
+        deep:true
+      }
     },
     methods: {
       getTopMenu: function () {
