@@ -14,18 +14,18 @@
   					</div>
   					<div class="submit_box">
   						<div id="userCodeDiv">
-  							<input class="txt1" type="text" name="user" placeholder="用户名" required ng-change="cleanErrorMes+sage()"/>
+  							<input class="txt1" type="text" v-model="userName" placeholder="用户名" required/>
   							<div>
   								<small class='error' ng-bind="error.name"></small>
   							</div>
   						</div>
   						<div id="userPassword">
-  							<input class="txt2" type="password" name="password" placeholder="密码" required  ng-change="cleanErrorMessage()" ng-Enter="login()"/><br/>
+  							<input class="txt2" type="password" v-model="password" placeholder="密码" required ng-Enter="login()"/><br/>
   							<div>
   								<small class='error'></small>
   							</div>
   						</div>
-  						<input class="submit_btn" type="button" value="登录" @click=""/>
+  						<input class="submit_btn" type="button" value="登录" @click="login()"/>
   					</div>
   				</form>
   			</div>
@@ -42,12 +42,26 @@ export default {
   name: 'bigData',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      userName: '',
+      password: ''
     }
   },
   methods: {
     toPath: function () {
       this.$router.push({name: 'home'})
+    },
+    login: function () {
+      this.$http.get('/TonikIntegration/servlet/LoginServlet?methodName=login&system=1&userPwd=admin123&userCode=admin')
+        .then(function (res) {
+          console.log(res)
+          if (res.body.menuList.length != 0) {
+           this.$router.push({name: 'bigdata.homePage'})
+          }
+        }, function (err) {
+          console.warn(err)
+          alert("用户名或密码有误！");
+        })
     }
   }
 }

@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import VueResource from 'vue-resource'
 
 import bigData from '@/components/bigdata'
 import home from '@/components/bigdata/home'
@@ -9,6 +10,7 @@ import basicdata from '@/components/bigdata/basicdata/basicdata.vue'
 import websiteManage from '@/components/bigdata/basicdata/websiteManage.vue'
 
 Vue.use(Router)
+Vue.use(VueResource)
 
 export default new Router({
   routes: [

@@ -38,3 +38,8 @@ import echarts from 'echarts'
 Vue.use(echarts)
 
 3.在homepage.vue中使用
+
+#进行ajax请求
+1.cnpm install vue-resource
+
+2.别忘记在src/router/index.js中import VueResource from 'vue-resource'和 Vue.use(VueResource)
