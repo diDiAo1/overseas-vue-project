@@ -52,7 +52,8 @@ export default {
       this.$router.push({name: 'home'})
     },
     login: function () {
-      this.$http.get('/TonikIntegration/servlet/LoginServlet?methodName=login&system=1&userPwd=admin123&userCode=admin')
+      this.$http.get('/TonikIntegration/servlet/LoginServlet?methodName=login&system=1',
+      {params: {userPwd: this.password, userCode: this.userName}})
         .then(function (res) {
           console.log(res)
           if (res.body.menuList.length != 0) {
