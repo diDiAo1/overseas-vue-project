@@ -13,19 +13,20 @@
 			<!-- SIDEBAR MENU -->
 			<ul id="sidebarMenu" class="main-menu nav nav-pills nav-stacked">
 				<li v-for="menu in sideBarMenus.menuList" class="has-sub">
-					<a>
+					<a @click="toPath(menu.NodeId,menu.Id)"
+             :class="{ 'active': menu.NodeId === data.currentSidebar }">
 						<!--<i ng-class="menu.menuClass"></i> -->
 						<span class="menu-text">{{menu.Name}}</span>
 						<!--<span ng-if="menu.leaf" ng-class="vm.bg[menu.id]" class="arrow"></span>-->
 					</a>
-					<!--<ul class="main-menu sub-main sub nav nav-pills nav-stacked" ng-if="menu.leaf" ng-class="vm.bg[menu.id]">
-						<li ng-repeat="subMenu in menu.subMenu" ng-click="vm.subActive(subMenu.id,subMenu.note,$event)" ng-class="vm.subBg[subMenu.id]">
-							<a>
-								<img ng-src="{{vm.imgSrc + subMenu.id}}" class="menu-img">
-								<span class="sub-menu-text">{{subMenu.name}}</span>
-							</a>
-						</li>
-					</ul>-->
+            <!--<ul class="main-menu sub-main sub nav nav-pills nav-stacked" ng-if="menu.leaf" ng-class="vm.bg[menu.id]">
+              <li ng-repeat="subMenu in menu.subMenu" ng-click="vm.subActive(subMenu.id,subMenu.note,$event)" ng-class="vm.subBg[subMenu.id]">
+                <a>
+                  <img ng-src="{{vm.imgSrc + subMenu.id}}" class="menu-img">
+                  <span class="sub-menu-text">{{subMenu.name}}</span>
+                </a>
+              </li>
+            </ul>-->
 				</li>
 			</ul>
 			<!-- /SIDEBAR MENU -->
@@ -39,17 +40,30 @@ export default {
   data () {
     return {
       sideBarMenus: '',
+      data: this.$store.state
     }
   },
   created () {
     this.getSideBarMenu()
   },
+  watch: {
+          'data':{
+            handler:(val,oldVal)=>{
+              //要执行的任务
+              //这里不知道怎么才能修改到this.data的数据，有知道的麻烦告知
+              //现在知道的就是通过直接修改Store.state的方式来更新数据，当然效果和修改this.data是一样的
+              //alert('成功')
+            },
+            // 深度观察
+            deep:true
+          }
+        },
   methods: {
     getSideBarMenu: function () {
-      this.sideBarMenus = {"menuList":[{"Id":"1","Name":"网站管理","NodeId":"","Level":"1","Sort":"1","ParentId":"0","PicUrl":""},
-              {"Id":"2","Name":"商品目录","NodeId":"","Level":"1","Sort":"2","ParentId":"0","PicUrl":""},
-              {"Id":"3","Name":"标准产品","NodeId":"","Level":"1","Sort":"3","ParentId":"0","PicUrl":""},
-              {"Id":"4","Name":"商品管理","NodeId":"","Level":"1","Sort":"4","ParentId":"0","PicUrl":""}]}
+      this.sideBarMenus = {"menuList":[{"Id":"1","Name":"网站管理","NodeId":"bigdata.website","Level":"1","Sort":"1","ParentId":"0","PicUrl":""},
+              {"Id":"2","Name":"商品目录","NodeId":"bigdata.catalogue","Level":"1","Sort":"2","ParentId":"0","PicUrl":""},
+              {"Id":"3","Name":"标准产品","NodeId":"bigdata.standard","Level":"1","Sort":"3","ParentId":"0","PicUrl":""},
+              {"Id":"4","Name":"商品管理","NodeId":"bigdata.product","Level":"1","Sort":"4","ParentId":"0","PicUrl":""}]}
                                                  console.log(this.sideBarMenus.menuList);
 
 
@@ -66,7 +80,10 @@ export default {
          }, function (err) {
            console.warn(err)
          })*/
-    }
+    },
+   toPath: function (note,id) {
+     this.$router.push({name: note, params:{menuId: id}})
+   }
   }
 }
 </script>
@@ -147,7 +164,7 @@ export default {
   .main-menu > li {
       margin-top: 0 !important;
   }
-  .sidebar-menu > ul > li.has-sub.open > a, .sidebar-menu > ul > li > a:hover, .sidebar-menu > ul > li:hover > a {
+  .sidebar-menu > ul > li.has-sub.open > a, .sidebar-menu > ul > li > a:hover, .sidebar-menu > ul > li > a.active, .sidebar-menu > ul > li:hover > a {
       color: #ffffff;
       background-color: #73B8F3;
   }
@@ -192,7 +209,7 @@ export default {
       margin-left: 4px;
       margin-right: 4px;
   }
-  ul.main-menu li a:hover {
+  ul.main-menu li a:hover,ul.main-menu li a.active {
       margin-left: 4px;
       margin-right: 4px;
   }

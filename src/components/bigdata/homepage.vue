@@ -1,7 +1,8 @@
 <template>
   <div>
     <h1>大数据平台首页hhhh</h1>
-    <div id="site" style="width:500px;height:300px;"></div>
+    <div id="site" style="width:500px;height:300px;float:left"></div>
+    <div id="number" style="width:500px;height:300px;float:left"></div>
   </div>
 </template>
 
@@ -29,7 +30,48 @@ export default {
           }, {
               value: 21,
               name: '女生'
-          }]
+          }],
+          numOption:{
+                title: {
+                    text: '跨境网站数量折线图'
+                },
+                tooltip: {
+                    trigger: "item",
+                    formatter: "{a} <br/>{b} : {c}"
+                },
+                legend: {
+                    x: 'right',
+                    data: ["跨境网站数"]
+                },
+                xAxis: [
+                    {
+                        type: "category",
+                        name: "月份",
+                        splitLine: { show: false },
+                        data: ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"]
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: "value",
+                        name: "金额（百万）"
+                    }
+                ],
+                series: [
+                    {
+                        name: "累计增长",
+                        type: "line",
+                        data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+                    }
+                    //,
+                    //{
+                    //    name: "月度增长",
+                    //    type: "line",
+                    //    data: Mres
+                    //
+                    //}
+                ]
+          }
       }
   },
  created(){
@@ -39,10 +81,15 @@ export default {
       setCurrentPath: function () {
          this.$store.state.currentPath = 'bigdata.homePage'
       },
+      //折线图
+      drawLine(id,option) {
+        var echarts = require('echarts');
+        this.chart = echarts.init(document.getElementById(id))
+        this.chart.setOption(option)
+      },
       // 绘图
       drawGraph(id) {
           var echarts = require('echarts');
-
           // 绘图方法
           this.chart = echarts.init(document.getElementById(id))
               // 皮肤添加同一般使用方式
@@ -130,6 +177,7 @@ export default {
   mounted() {
       this.$nextTick(function() {
           this.drawGraph('site')
+          this.drawLine('number',this.numOption)
       })
   }
 }

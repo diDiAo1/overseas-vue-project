@@ -81,7 +81,7 @@ export default {
              console.warn(err)
            })*/
            this.topMenus = {"menuList":[{"Id":"1","Name":"首页","NodeId":"bigdata.homePage","Level":"1","Sort":"1","ParentId":"0","PicUrl":""},
-                       {"Id":"2","Name":"基础数据","NodeId":"bigdata.websiteManage","Level":"1","Sort":"2","ParentId":"0","PicUrl":""},
+                       {"Id":"2","Name":"基础数据","NodeId":"bigdata.website","Level":"1","Sort":"2","ParentId":"0","PicUrl":""},
                        {"Id":"3","Name":"风险","NodeId":"","Level":"1","Sort":"3","ParentId":"0","PicUrl":""},
                        {"Id":"4","Name":"信息管理","NodeId":"","Level":"1","Sort":"4","ParentId":"0","PicUrl":""},
                        {"Id":"5","Name":"报表","NodeId":"","Level":"1","Sort":"5","ParentId":"0","PicUrl":""},

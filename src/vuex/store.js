@@ -7,7 +7,8 @@ const store = new Vuex.Store({
   // 定义状态
   state: {
     author: '111',
-    currentPath: 'bigdata.homePage'
+    currentPath: 'bigdata.homePage',
+    currentSidebar: ''
   }
 })
 

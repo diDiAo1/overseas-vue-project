@@ -7,7 +7,10 @@ import home from '@/components/bigdata/home'
 //首页
 import homePage from '@/components/bigdata/homepage'
 import basicdata from '@/components/bigdata/basicdata/basicdata.vue'
-import websiteManage from '@/components/bigdata/basicdata/websiteManage.vue'
+import website from '@/components/bigdata/basicdata/website.vue'
+import catalogue from '@/components/bigdata/basicdata/catalogue.vue'
+import product from '@/components/bigdata/basicdata/product.vue'
+import standard from '@/components/bigdata/basicdata/standard.vue'
 
 Vue.use(Router)
 Vue.use(VueResource)
@@ -35,8 +38,23 @@ export default new Router({
           children: [
             {
               path: 'website',
-              name: 'bigdata.websiteManage',
-              component: websiteManage
+              name: 'bigdata.website',
+              component: website
+            },
+            {
+              path: 'catalogue',
+              name: 'bigdata.catalogue',
+              component: catalogue
+            },
+            {
+              path: 'product',
+              name: 'bigdata.product',
+              component: product
+            },
+            {
+              path: 'standard',
+              name: 'bigdata.standard',
+              component: standard
             }
           ]
         }
