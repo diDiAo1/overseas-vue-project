@@ -1,11 +1,7 @@
 <template>
   <div>
-    <div class="col-sm-2 col-lg-2 tab-content left-menu">
       <sidebar></sidebar>
-    </div>
-    <div class="col-sm-10 col-lg-10">
       <router-view></router-view>
-    </div>
   </div>
 </template>
 
