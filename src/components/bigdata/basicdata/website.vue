@@ -27,15 +27,15 @@
   						<td>{{item.Name}}</td>
   						<td>{{item.Location}}</td>
   						<td>
-  							<a data-toggle="tooltip" data-placement="top" ui-sref="start.systemStart.personEditManage({id:person.id,method:'view'})" bs-tooltip
+  							<a data-toggle="tooltip" data-placement="top" bs-tooltip
                                  class="a-link-blue">
   								查看
   							</a>
-  							<a data-toggle="tooltip" data-placement="top" ui-sref="start.systemStart.personEditManage({id:person.id,method:'edit'})" bs-tooltip
+  							<a data-toggle="tooltip" data-placement="top" bs-tooltip
                                  class="a-link-blue">
   								编辑
   							</a>
-   							<a data-toggle="tooltip"  data-placement="right" ng-click="delPersonManage(person)" bs-tooltip
+   							<a data-toggle="tooltip"  data-placement="right" bs-tooltip
                                  class="a-link-blue">
   								删除
   							</a>

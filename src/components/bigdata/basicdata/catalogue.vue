@@ -1,7 +1,17 @@
 <template>
-  <div>
-    <h1>商品目录页面hhhh</h1>
-  </div>
+  <div class="row">
+    	<div class="col-sm-12 content">
+    		<div class="box border green">
+    			<div class="box-title">
+    				<h4><i class="fa fa-columns"></i><span class="hidden-inline-mobile">商品目录</span></h4>
+    			</div>
+    			<div class="box-body" ng-scrollbars ng-scrollbars-config="scrollbarConfig">
+
+    			</div>
+    		</div>
+    		<!-- /BOX -->
+    	</div>
+    </div>
 </template>
 
 <script>

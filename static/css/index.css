@@ -22,7 +22,6 @@ body {
   /* min-height: 800px; */
   /* border-left: 1px solid #cdd2d2; */
   padding-bottom: 0;
-  padding-right: 25px;
   margin-top:8px;
   /* padding-bottom: 30px; */
 }
@@ -241,4 +240,20 @@ label.box-label {
 .btn:hover, .btn:focus {
   color: #333333;
   text-decoration: none;
+}
+
+.a-link-blue {
+  color: #479ACB;
+  margin-right: 6px;
+  text-decoration: none;
+}
+
+.a-link-blue:hover {
+  color:#b41019;
+  text-decoration:underline;
+}
+
+.a-link-blue:active {
+  color:rgb(85, 26, 139);
+  text-decoration:underline;
 }
