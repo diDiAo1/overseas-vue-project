@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
 import sidebar from '../../sidebar'
 
 export default {

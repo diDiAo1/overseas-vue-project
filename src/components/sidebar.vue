@@ -34,7 +34,7 @@
 	</div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
 export default {
   name: 'sidebar',
   data () {
@@ -55,7 +55,7 @@ export default {
               //alert('成功')
             },
             // 深度观察
-            deep:true
+            deep: true
           }
         },
   methods: {

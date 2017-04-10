@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
 
 import navbar from '../navbar.vue'
 
